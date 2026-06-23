@@ -39,13 +39,20 @@ function updateCountdown() {
 
 function checkQuiz() {
     let score = 0;
-    const answers = document.querySelectorAll("input[type='radio']:checked");
 
-    answers.forEach(function(answer) {
-        if (answer.value === "correct") {
+    const questions = ["q1", "q2", "q3"];
+
+    questions.forEach(function(question) {
+        const selected = document.querySelector("input[name='" + question + "']:checked");
+
+        if (selected && selected.value === "correct") {
             score++;
         }
     });
 
-    document.getElementById("quizResult").innerHTML = "You scored " + score + "/3!";
+    const result = document.getElementById("quizResult");
+
+    if (result) {
+        result.innerHTML = "You scored " + score + "/3!";
+    }
 }
