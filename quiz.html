@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Solar Eclipse Quiz</title>
+  <link rel="stylesheet" href="style.css">    
+</head>
 
+<body>
+<header>
+  <h1>Solar Eclipse Quiz!</h1>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<h2>Test your eclipse knowledge: answer the questions below and see how you do!</h2>
+  
+<form id="quizForm">
+  <p>1. What causes an eclipse?</p>
+  <label><input type="radio" name="q1" value="wrong"> Earth blocks the Moon</label><br>
+  <label><input type="radio" name="q1" value="correct"> Moon blocks the Sun</label><br>
+  <label><input type="radio" name="q1" value="wrong"> Sun blocks Earth</label><br>
+  <p>2. What should you use to safely view the sun during the eclipse?</p>
+  <label><input type="radio" name="q2" value="wrong"> Safety goggles</label><br>
+  <label><input type="radio" name="q2" value="correct"> Certified eclipse glasses</label><br>
+  <label><input type="radio" name="q2" value="wrong"> Binoculars</label><br>
+  <p>3. Why are solar eclipses predictable?</p>
+  <label><input type="radio" name="q1" value="correct"> The moon and the Earth follow consistent orbits</label><br>
+  <label><input type="radio" name="q1" value="wrong"> The sun changes direction constantly</label><br>
+  <label><input type="radio" name="q1" value="wrong"> Certain weather patterns are observable on the day of the eclipse</label><br>
+
+  <button type="button" onclick="checkQuiz()">Submit Quiz</button>
+</form>
+  
