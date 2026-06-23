@@ -8,43 +8,37 @@ window.onload = function () {
 
 function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
-    }
+    localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
 }
 
 const facts = [
+    "A total solar eclipse happens when the Moon completely covers the Sun.",
+    "The Sun's corona is visible during totality.",
+    "Eclipse glasses are needed to safely view the Sun.",
     "The Moon's shadow moves across Earth during a solar eclipse.",
-    "A total solar eclipse only happens in a narrow path on Earth.",
-    "The Sun's corona can be seen during totality.",
-    "Eclipse glasses protect your eyes from dangerous sunlight.",
-    "The 2027 total solar eclipse will be one of the longest of the century."
+    "The 2027 total solar eclipse will pass through parts of Europe, Africa, and the Middle East."
 ];
 
 function showRandomFact() {
-    const random = Math.floor(Math.random() * facts.length);
-    document.getElementById("factText").innerHTML = facts[random];
+    document.getElementById("factText").innerHTML =
+        facts[Math.floor(Math.random() * facts.length)];
 }
 
 function updateCountdown() {
     const eclipseDate = new Date("August 2, 2027 00:00:00");
     const today = new Date();
     const difference = eclipseDate - today;
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
 
     const countdown = document.getElementById("countdown");
 
     if (countdown) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
         countdown.innerHTML = days + " days remaining until the 2027 total solar eclipse!";
     }
 }
 
 function checkQuiz() {
     let score = 0;
-
     const answers = document.querySelectorAll("input[type='radio']:checked");
 
     answers.forEach(function(answer) {
@@ -53,6 +47,5 @@ function checkQuiz() {
         }
     });
 
-    document.getElementById("quizResult").innerHTML =
-        "You scored " + score + "/3!";
+    document.getElementById("quizResult").innerHTML = "You scored " + score + "/3!";
 }
