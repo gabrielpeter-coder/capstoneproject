@@ -40,19 +40,17 @@ function updateCountdown() {
 function checkQuiz() {
     let score = 0;
 
-    const questions = ["q1", "q2", "q3"];
-
-    questions.forEach(function(question) {
-        const selected = document.querySelector("input[name='" + question + "']:checked");
-
-        if (selected && selected.value === "correct") {
-            score++;
-        }
-    });
-
-    const result = document.getElementById("quizResult");
-
-    if (result) {
-        result.innerHTML = "You scored " + score + "/3!";
+    if (document.querySelector("input[name='q1']:checked")?.value === "correct") {
+        score++;
     }
+
+    if (document.querySelector("input[name='q2']:checked")?.value === "correct") {
+        score++;
+    }
+
+    if (document.querySelector("input[name='q3']:checked")?.value === "correct") {
+        score++;
+    }
+
+    alert("You scored " + score + "/3!");
 }
