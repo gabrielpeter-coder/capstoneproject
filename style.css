@@ -1,1 +1,72 @@
+body {
+  margin: 0;
+  font-family: Helvetica;
+  color: blue;
+}
 
+header {
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+nav a {
+  color: red;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+nav a:hover {
+   background-color: rgba(255, 255, 255, 0.35);
+}
+
+.card {
+  padding: 25px;
+  margin: 20px;
+}
+
+button {
+  background-color: #ffb703;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #fb8500;
+}
+
+img {
+  border-radius: 12px;
+}
+
+.dark-mode {
+    background-color: #111;
+    color: #eee;
+}
+
+.dark-mode .card {
+    background-color: #1f1f1f;
+}
+
+.dark-mode table,
+.dark-mode th,
+.dark-mode td {
+    border-color: #666;
+}
+
+.dark-mode header,
+    background: #000;
+}
+
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 8px auto;
+        max-width: 200px;
+    }
+
+    main {
+        padding: 12px;
+    }
+}
